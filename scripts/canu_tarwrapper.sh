@@ -7,7 +7,7 @@ touch tempfile
 sleep 5
 
 #run thing
-bash /canu-1.3/Linux-amd64/bin/canu -p canu -d canu_out "${@:1}"
+bash /canu-1.3/Linux-amd64/bin/canu -p canu -d canu_out genomeSize=$1 "${@:2}"
 
 #wrap up output and kick out tempfile
 find . -mindepth 1 -newer tempfile -exec tar -rf FullOutput.tar {} \;
